@@ -87,12 +87,12 @@
         <section class="w-full px-6 py-12 w-full relative">
             <div class="bg-white w-full px-4 pt-24 pb-12 rounded-b-3xl rounded-t-[20rem]" data-aos="zoom-in" data-aos-duration="3000">
                 <h2 class="font-latin text-2xl">Akad Nikah</h2>
-                <p>Selasa, 9 Februari 2024</p>
+                <p>Selasa, 9 Februari 2025</p>
                 <p>Pukul 08.00 - 10.00 WITA</p>
                 <p class="mb-8">Kediaman Mempelai Wanita</p>
 
                 <h2 class="font-latin text-2xl">Resepsi</h2>
-                <p>Selasa, 9 Februari 2024</p>
+                <p>Selasa, 9 Februari 2025</p>
                 <p>Pukul 08.00 - 10.00 WITA</p>
                 <p class="mb-8">Kediaman Mempelai Wanita</p>
 
@@ -125,6 +125,37 @@
     const buka = document.getElementById("Open");
     const content = document.getElementById("isiUndangan");
     const song = document.getElementById("lagu");
+
+var countDownDate = new Date("Feb 9, 2025 08:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("detik").innerText = seconds;
+  document.getElementById("menit").innerText = minutes;
+  document.getElementById("jam").innerText = hours;
+  document.getElementById("hari").innerText = days;
+
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
 
     buka.addEventListener("click", function() {
         content.classList.toggle("hidden");
