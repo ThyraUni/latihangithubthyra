@@ -117,14 +117,18 @@
             </div>
         </section>
     </div>
+    <!-- lagu -->
+     <audio src="MyLoveWestlife.mp3" id="lagu"></audio>
 </body>
 
 <script>
     const buka = document.getElementById("Open");
     const content = document.getElementById("isiUndangan");
+    const song = document.getElementById("lagu");
 
     buka.addEventListener("click", function() {
         content.classList.toggle("hidden");
+        lagu.play();
     })
 </script>
 
