@@ -39,7 +39,7 @@
                 <div class="mb-2">Kepada Yth <br>Bapak/Ibu/Saudara/i</div>
                 <div class="mb-4 font-bold">Nama Tamu</div>
                 <a
-                    id="tombolBukaUndangan"
+                    id="Open"
                     href="#isiUndangan"
                     class="bg-rose-500 text-white py-3 px-6 rounded-xl hover:bg-rose-700"
                 >Buka Undangan</a>
@@ -119,5 +119,14 @@
     </div>
 </body>
 
+<script>
+    const buka = document.getElementById("Open");
+    const content = document.getElementById("isiUndangan");
+
+    buka.addEventListener("click", function() {
+        // console.log("tombol terdeteksi");
+        content.classList.toggle("hidden");
+    })
+</script>
 
 </html>
